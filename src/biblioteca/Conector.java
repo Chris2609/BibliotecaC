@@ -15,7 +15,7 @@ public class Conector {
 		public Conector() throws ClassNotFoundException, SQLException {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://"+HOST+"/"+BBDD, USERNAME, PASSWORD);
-
+//			con = (Connection) DriverManager.getConnection(url, "root", "");
 		}
 		
 		public void cerrarConexion() throws SQLException {

@@ -21,4 +21,13 @@ public class Conector {
 		public void cerrarConexion() throws SQLException {
 			con.close();
 		}
+
+		public Connection getCon() {
+			return con;
+		}
+
+		public void setCon(Connection con) {
+			this.con = con;
+		}
+		
 }

@@ -6,4 +6,5 @@
  *
  */
 module GestionBliblioteca {
+	requires java.sql;
 }

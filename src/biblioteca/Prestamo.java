@@ -9,6 +9,8 @@ public class Prestamo {
 	private Date fecha;
 	private boolean devuelto;
 	
+	public Prestamo() {}
+	
 	public int getIdLibro() {
 		return idLibro;
 	}

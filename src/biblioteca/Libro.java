@@ -7,6 +7,8 @@ public class Libro {
 	private String autor;
 	private int numPag;
 	
+	public Libro() {}
+	
 	public int getId() {
 		return id;
 	}

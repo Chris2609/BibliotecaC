@@ -1,10 +1,11 @@
 package biblioteca;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorBiblioteca {
 
-	public void run() {
+	public void run() throws ClassNotFoundException, SQLException {
         Scanner scan = new Scanner(System.in);
 		int opcion;
 		
@@ -15,8 +16,9 @@ public class GestorBiblioteca {
         switch(opcion) {
         
         case Menu.GESTIONAR_LIBROS:
-        	System.out.println("");
         	
+        	GestorLibros.run(scan);
+
         	break;
         	
         }

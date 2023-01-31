@@ -1,10 +1,11 @@
 package biblioteca;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorLibros {
 
-	public static void run(Scanner scan) {
+	public static void run(Scanner scan) throws ClassNotFoundException, SQLException {
 	
 		int opcion = 0;
 
@@ -15,13 +16,20 @@ public class GestorLibros {
 			switch(opcion) {
 			case Menu.INSERTAR_LIBRO:
 				
-				System.out.println("Insertar libro");
+				Libro libro = new Libro();
+				libro = new FormulariosDeDatos().pedirDatosLibro(scan);
+				GestorBBDD gestor = new GestorBBDD();
+				gestor.insertarLibro(libro);
 				
 				break;
 				
 			case Menu.ELIMINAR_LIBRO:
 			
-				System.out.println("Eliminar libro");
+				System.out.println("Introduce el ID del libro a eliminar");
+				int elim = Integer.parseInt(scan.nextLine());
+				GestorBBDD eliminar = new GestorBBDD();
+				eliminar.eliminarLibro(elim);
+
 				
 				break;
 			

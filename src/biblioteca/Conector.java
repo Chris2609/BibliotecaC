@@ -13,7 +13,7 @@ public class Conector {
 		private static final String PASSWORD = "";
 		
 		public void conectar() throws ClassNotFoundException, SQLException {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://"+HOST+"/"+BBDD, USERNAME, PASSWORD);
 //			con = (Connection) DriverManager.getConnection(url, "root", "");
 		}

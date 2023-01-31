@@ -1,5 +1,5 @@
 package biblioteca;
-
+	
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -22,6 +22,7 @@ public class GestorBBDD {
 		conectar.conectar();
 		PreparedStatement eliminar = conectar.getCon().prepareStatement("DELETE FROM libros WHERE id = ?");
 		eliminar.setInt(1, id);
+		eliminar.execute();
 		
 		conectar.cerrarConexion();
 	}

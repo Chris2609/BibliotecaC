@@ -18,31 +18,31 @@ public class GestorLibros {
 				
 				Libro libro = new Libro();
 				libro = new FormulariosDeDatos().pedirDatosLibro(scan);
-				GestorBBDD gestor = new GestorBBDD();
-				gestor.insertarLibro(libro);
+				GestorBBDD insertar = new GestorBBDD();
+				insertar.insertarLibro(libro);
 				
 				break;
 				
 			case Menu.ELIMINAR_LIBRO:
 			
-				System.out.println("Introduce el ID del libro a eliminar");
-				int elim = Integer.parseInt(scan.nextLine());
+				int elim = new FormulariosDeDatos().pedirIdLibro(scan);
 				GestorBBDD eliminar = new GestorBBDD();
 				eliminar.eliminarLibro(elim);
 
-				
 				break;
 			
 			
 			case Menu.VISUALIZAR_LIBROS:
 				
-				System.out.println("Ver libros");
+				
 			
 				break;
-				
-			}
-			
-		}while(opcion!=0);
+			case Menu.SALIR:
+				break;
+			default:
+                System.out.println("Opcion incorrecta!");
+            }
+		}while(opcion!= Menu.SALIR);
 		
 	}
 	

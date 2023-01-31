@@ -12,7 +12,7 @@ public class GestorBiblioteca {
 		Menu.mostrarMenuPrincipal();
         opcion = Integer.parseInt(scan.nextLine());
 		
-        
+        do {
         switch(opcion) {
         
         case Menu.GESTIONAR_LIBROS:
@@ -21,7 +21,18 @@ public class GestorBiblioteca {
 
         	break;
         	
+        	
+        	
+        	
+        case 0:        	
+        	System.out.println("Adios");
+        
+        break;
+        
         }
+        
+  
+        }while(opcion != 0);
 	}
 	
 }

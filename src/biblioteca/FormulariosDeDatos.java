@@ -35,7 +35,7 @@ public class FormulariosDeDatos {
 		System.out.println("Introduce el ID del libro");
 		idLibro = Integer.parseInt(scan.nextLine());
 		
-		return 0;
+		return idLibro;
 		
 	}
 	

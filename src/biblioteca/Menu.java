@@ -15,12 +15,14 @@ public class Menu {
 	
 	
 	public static void mostrarMenuLibros() {
-		System.out.println("1. Insertar libro\n2. Eliminar libro\n3. Visualizar libros");
+		System.out.println("1. Insertar libro\n2. Eliminar libro\n3. Modificar libro");
 	}
 	
 	public static final int INSERTAR_LIBRO = 1;
 	public static final int ELIMINAR_LIBRO = 2;
 	public static final int VISUALIZAR_LIBROS=3;
+	
+	public static final int SALIR = 0;
 	
 	
 	public static void mostrarMenuSocios() {

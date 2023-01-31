@@ -23,6 +23,7 @@ public class GestorBBDD {
 		PreparedStatement eliminar = conectar.getCon().prepareStatement("DELETE FROM libros WHERE id = ?");
 		eliminar.setInt(1, id);
 		
+		conectar.cerrarConexion();
 	}
 	
 	public Libro getLibro(int id) {

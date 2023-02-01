@@ -17,7 +17,15 @@ public class GestorSocios {
 				
 				System.out.println("Socios:");
 				
+				
+				break;
+				
+			case Menu.SALIR:
+				
+				System.out.println("\nSaliendo\n");
 			}
+			
+		
 			
 			
 		}while(opcion!=0);

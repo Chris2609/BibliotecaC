@@ -1,12 +1,14 @@
 package biblioteca;
 	
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class GestorBBDD {
+	Conector conectar = new Conector();
 
 	public void insertarLibro(Libro libro) throws ClassNotFoundException, SQLException {
-		Conector conectar = new Conector();
 		conectar.conectar();
         PreparedStatement insertar = conectar.getCon().prepareStatement("INSERT INTO libros (titulo, autor, num_pag) VALUES (?,?,?)");
         insertar.setString(1, libro.getTitulo());
@@ -18,13 +20,45 @@ public class GestorBBDD {
 	}
 	
 	public void eliminarLibro(int id) throws ClassNotFoundException, SQLException {
-		Conector conectar = new Conector();
 		conectar.conectar();
 		PreparedStatement eliminar = conectar.getCon().prepareStatement("DELETE FROM libros WHERE id = ?");
 		eliminar.setInt(1, id);
 		eliminar.execute();
 		
 		conectar.cerrarConexion();
+	}
+	
+	public void modificarLibro(int id, Libro libro) throws ClassNotFoundException, SQLException {
+		conectar.conectar();
+        PreparedStatement modificar = conectar.getCon().prepareStatement("UPDATE libros SET titulo= ?, autor= ?, num_pag= ? WHERE id = ?");
+        modificar.setString(1, libro.getTitulo());
+        modificar.setString(2, libro.getAutor());
+        modificar.setInt(3, libro.getNumPag());
+        modificar.setInt(4, id);
+        
+        modificar.execute();
+        
+        conectar.cerrarConexion();
+	}
+	
+	public ArrayList<Libro> verLibros() throws ClassNotFoundException, SQLException {
+	
+		conectar.conectar();
+		PreparedStatement ver = conectar.getCon().prepareStatement("SELECT * FROM libros");
+		ver.execute();
+		ResultSet resultado = ver.executeQuery();
+		
+		ArrayList<Libro> libros = new ArrayList<Libro>();
+		while(resultado.next()) {
+			Libro libro = new Libro();
+			libro.setId(resultado.getInt("id"));
+			libro.setTitulo(resultado.getString("titulo"));
+			libro.setAutor(resultado.getString("autor"));
+			libro.setNumPag(resultado.getInt("num_pag"));
+			
+			libros.add(libro);
+		}
+		return libros;
 	}
 	
 	public Libro getLibro(int id) {

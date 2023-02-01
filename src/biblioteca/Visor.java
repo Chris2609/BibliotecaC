@@ -7,7 +7,7 @@ public class Visor {
 
 	public static void mostrarLibros(ArrayList<Libro> libros) {
 		for (int i = 0; i < libros.size(); i++) {
-			System.out.println(libros.get(i).getId() + "," + libros.get(i).getTitulo() + "," + libros.get(i).getAutor() + "," + libros.get(i).getNumPag() + "\n" );
+			System.out.println("ID:" + libros.get(i).getId() + "\nTitulo: " + libros.get(i).getTitulo() + "\nAutor: " + libros.get(i).getAutor() + "\nNúm Páginas: " + libros.get(i).getNumPag() + "\n" );
 		}
 	}
 	

@@ -17,8 +17,9 @@ public class FormulariosDeDatos {
 		return libro;
 	}
 	
-	public static Libro modificarDatosLibro(Libro libro, Scanner scan) {
+	public static Libro modificarDatosLibro(Scanner scan) {
 		
+		Libro libro = new Libro();
 		System.out.println("Introduce el nuevo titulo del libro");
 		libro.setTitulo(scan.nextLine());
 		System.out.println("Introduce el nuevo autor del libro");

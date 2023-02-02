@@ -40,4 +40,51 @@ public class FormulariosDeDatos {
 		
 	}
 	
+	public static Socio pedirDatosSocio(Scanner scan) {
+		
+		Socio socio = new Socio();
+		System.out.println("Introduce el nombre del socio");
+		socio.setNombre(scan.nextLine());
+		System.out.println("Introduce el apellido del socio");
+		socio.setApellido(scan.nextLine());
+		System.out.println("Introduce la direccion");
+		socio.setDireccion(scan.nextLine());
+		System.out.println("Introduce la población");
+		socio.setPoblacion(scan.nextLine());
+		System.out.println("Introduce la provincia");
+		socio.setProvincia(scan.nextLine());
+		System.out.println("Introduce el DNI del socio");
+		socio.setDni(scan.nextLine());
+		
+		return socio;
+	}
+	
+	public static int pedirIdSocio(Scanner scan) {
+		
+		int idSocio;
+		System.out.println("Introduce el ID del socio");
+		idSocio = Integer.parseInt(scan.nextLine());
+		
+		return idSocio;
+	}
+	
+	public static Socio modificarSocio(Scanner scan) {
+		
+		Socio socio = new Socio();
+		System.out.println("Introduce el nuevo nombre del socio");
+		socio.setNombre(scan.nextLine());
+		System.out.println("Introduce el nuevo apellido del socio");
+		socio.setApellido(scan.nextLine());
+		System.out.println("Introduce la nueva direccion");
+		socio.setDireccion(scan.nextLine());
+		System.out.println("Introduce la nueva población");
+		socio.setPoblacion(scan.nextLine());
+		System.out.println("Introduce la nueva provincia");
+		socio.setProvincia(scan.nextLine());
+		System.out.println("Introduce el nuevo DNI del socio");
+		socio.setDni(scan.nextLine());
+		
+		return socio;
+	}
+	
 }

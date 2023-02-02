@@ -28,11 +28,13 @@ public class Menu {
 	
 	
 	public static void mostrarMenuSocios() {
-		System.out.println("1. Ver socios\n2. Insertar Socio\n3. Eliminar Socio\n4. Modificar Socio   \n0. Salir");
+		System.out.println("1. Ver Socios\n2. Insertar Socio\n3. Eliminar Socio\n4. Modificar Socio   \n0. Salir");
 	} 
 	
 	public static final int VER_SOCIOS = 1;
-	
+	public static final int INSERTAR_SOCIO = 2;
+	public static final int ELIMINAR_SOCIO = 3;
+	public static final int MODIFICAR_SOCIO = 4;
 	
 	public static void mostrarMenuPrestamos() {
 		System.out.println("Realizar préstamo");

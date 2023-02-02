@@ -86,6 +86,45 @@ public class GestorBBDD {
 		return socios;
 	}
 	
+	public void insertarSocio(Socio socio) throws ClassNotFoundException, SQLException {
+		conectar.conectar();
+        PreparedStatement insertar = conectar.getCon().prepareStatement("INSERT INTO socios (nombre, apellido, direccion, poblacion, provincia, dni) VALUES (?,?,?,?,?,?)");
+        insertar.setString(1, socio.getNombre());
+        insertar.setString(2, socio.getApellido());
+        insertar.setString(3, socio.getDireccion());
+        insertar.setString(4, socio.getPoblacion());
+        insertar.setString(5, socio.getProvincia());
+        insertar.setString(6, socio.getDni());
+        
+		insertar.execute();
+	
+		conectar.cerrarConexion();
+	}
+	
+	public void eliminarSocio(int id) throws ClassNotFoundException, SQLException {
+		conectar.conectar();
+		PreparedStatement eliminar = conectar.getCon().prepareStatement("DELETE FROM socios WHERE id = ?");
+		eliminar.setInt(1, id);
+		eliminar.execute();
+		
+		conectar.cerrarConexion();
+	}
+	
+	public void modificarSocio(int id, Socio socio) throws ClassNotFoundException, SQLException {
+		conectar.conectar();
+        PreparedStatement modificar = conectar.getCon().prepareStatement("UPDATE socios SET nombre= ?, apellido= ?, direccion= ?, poblacion = ?, provincia= ?, dni= ? WHERE id = ?");
+        modificar.setString(1, socio.getNombre());
+        modificar.setString(2, socio.getApellido());
+        modificar.setString(3, socio.getDireccion());
+        modificar.setString(4, socio.getPoblacion());
+        modificar.setString(5, socio.getProvincia());
+        modificar.setString(6, socio.getDni());
+        modificar.setInt(7, id);
+        
+        modificar.execute();
+        
+        conectar.cerrarConexion();
+	}
 	
 	public Libro getLibro(int id) {
 		

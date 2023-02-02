@@ -28,7 +28,7 @@ public class Menu {
 	
 	
 	public static void mostrarMenuSocios() {
-		System.out.println("1. Ver socios");
+		System.out.println("1. Ver socios\n2. Insertar Socio\n3. Eliminar Socio\n4. Modificar Socio   \n0. Salir");
 	} 
 	
 	public static final int VER_SOCIOS = 1;

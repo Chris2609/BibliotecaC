@@ -58,8 +58,34 @@ public class GestorBBDD {
 			
 			libros.add(libro);
 		}
+		conectar.cerrarConexion();
 		return libros;
 	}
+	
+	public ArrayList<Socio> verSocios() throws ClassNotFoundException, SQLException {
+		
+		conectar.conectar();
+		PreparedStatement ver = conectar.getCon().prepareStatement("SELECT * FROM socios");
+		ver.execute();
+		ResultSet resultado = ver.executeQuery();
+		
+		ArrayList<Socio> socios = new ArrayList<Socio>();
+		while(resultado.next()) {
+			Socio socio = new Socio();
+			socio.setId(resultado.getInt("id"));
+			socio.setNombre(resultado.getString("nombre"));
+			socio.setApellido(resultado.getString("apellido"));
+			socio.setDireccion(resultado.getString("direccion"));
+			socio.setPoblacion(resultado.getString("poblacion"));
+			socio.setProvincia(resultado.getString("provincia"));
+			socio.setDni(resultado.getString("dni"));
+			
+			socios.add(socio);
+		}
+		conectar.cerrarConexion();
+		return socios;
+	}
+	
 	
 	public Libro getLibro(int id) {
 		

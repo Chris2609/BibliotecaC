@@ -1,10 +1,11 @@
 package biblioteca;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GestorSocios {
 
-	public static void run(Scanner scan) {
+	public static void run(Scanner scan) throws ClassNotFoundException, SQLException {
 	
 		int	opcion=0;
 		
@@ -14,15 +15,14 @@ public class GestorSocios {
 			
 			switch(opcion) {
 			case Menu.VER_SOCIOS:
-				
-				System.out.println("Socios:");
-				
+				GestorBBDD versociosbbdd = new GestorBBDD();
+				Visor.mostrarSocios(versociosbbdd.verSocios());
 				
 				break;
 				
 			case Menu.SALIR:
 				
-				System.out.println("\nSaliendo\n");
+				Visor.mostrarMensaje("\nSaliendo...\n");
 			}
 			
 		

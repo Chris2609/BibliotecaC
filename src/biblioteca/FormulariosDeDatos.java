@@ -1,5 +1,6 @@
 package biblioteca;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class FormulariosDeDatos {
@@ -85,6 +86,21 @@ public class FormulariosDeDatos {
 		socio.setDni(scan.nextLine());
 		
 		return socio;
+	}
+	
+	public static Prestamo pedirDatosPrestamo(Scanner scan) {
+		
+		Prestamo prestamo = new Prestamo();
+		
+		System.out.println("Introduce el ID del libro");
+		prestamo.setIdLibro(Integer.parseInt(scan.nextLine()));
+		System.out.println("Introduce el ID del socio");
+		prestamo.setIdSocio(Integer.parseInt(scan.nextLine()));
+		System.out.println("Introduce la fecha del prestamo");
+		prestamo.setFecha(java.sql.Date.valueOf(scan.nextLine()));
+		prestamo.setDevuelto(Boolean.parseBoolean("0"));
+		
+		return prestamo;
 	}
 	
 }

@@ -12,7 +12,7 @@ public class Menu {
 		
 	public static final int GESTIONAR_LIBROS = 1;
 	public static final int GESTIONAR_SOCIOS = 2;
-	
+	public static final int GESTIONAR_PRESTAMOS = 3;
 	
 	
 	public static void mostrarMenuLibros() {

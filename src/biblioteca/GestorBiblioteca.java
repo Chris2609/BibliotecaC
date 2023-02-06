@@ -27,6 +27,12 @@ public class GestorBiblioteca {
         	
         	break;
         	
+        case Menu.GESTIONAR_PRESTAMOS:
+        	
+        	
+        	
+        	break;
+        	
         case 0:        	
         	Visor.mostrarMensaje("\nAdios :D\n");
         	

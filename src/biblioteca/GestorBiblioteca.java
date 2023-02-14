@@ -29,7 +29,7 @@ public class GestorBiblioteca {
         	
         case Menu.GESTIONAR_PRESTAMOS:
         	
-        	
+        	GestorPrestamos.run(scan);
         	
         	break;
         	

@@ -1,5 +1,6 @@
 package biblioteca;
 	
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -125,6 +126,20 @@ public class GestorBBDD {
         
         conectar.cerrarConexion();
 	}
+	
+	public void insertarPrestamo (Prestamo prestamo) throws ClassNotFoundException, SQLException {
+		conectar.conectar();
+		PreparedStatement insertarPrest = conectar.getCon().prepareStatement("INSERT INTO prestamos (id_libro, id_socio, fecha, devuelto) VALUES (?,?,?,?)");
+		insertarPrest.setInt(1, prestamo.getIdLibro());
+		insertarPrest.setInt(2, prestamo.getIdSocio());
+		insertarPrest.setDate(3, (Date) prestamo.getFecha());
+		insertarPrest.setBoolean(4, prestamo.isDevuelto());
+		
+		insertarPrest.execute();
+		conectar.cerrarConexion();
+	}
+	
+	
 	
 	public Libro getLibro(int id) {
 		

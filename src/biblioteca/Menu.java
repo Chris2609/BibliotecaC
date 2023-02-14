@@ -37,7 +37,7 @@ public class Menu {
 	public static final int MODIFICAR_SOCIO = 4;
 	
 	public static void mostrarMenuPrestamos() {
-		System.out.println("Realizar préstamo");
+		System.out.println("1. Realizar Prestamo\n");
 	}
 
 }
